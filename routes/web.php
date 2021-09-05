@@ -30,4 +30,5 @@ Route::prefix('address')->group(function() {
     Route::get('/edit/{address}', [App\Http\Controllers\AddressController::class, 'edit'])->name('address.edit');
     Route::put('/update/{address}', [App\Http\Controllers\AddressController::class, 'update'])->name('address.update');
     Route::delete('/destroy/{address}', [App\Http\Controllers\AddressController::class, 'destroy'])->name('address.destroy');
+    Route::get('/details/{address}', [App\Http\Controllers\AddressController::class, 'details'])->name('address.details');
 });

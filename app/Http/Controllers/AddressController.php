@@ -24,7 +24,7 @@ class AddressController extends Controller
     }
 
     public function refresh() {
-        return response()->json(Address::All());
+        return response()->json(Address::all());
     }
 
     /**
@@ -119,5 +119,15 @@ class AddressController extends Controller
         }
 
         return redirect()->action([AddressController::class, 'index'])->with('success', 'URL Excluída.');
+    }
+
+    /**
+     * Return one list of details.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function details(Address $address) {
+        return response()->json($address->details);
     }
 }

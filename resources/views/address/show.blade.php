@@ -13,6 +13,8 @@
                         <label for="url" class="form-label">URL</label>
                         <input type="url" class="form-control" id="url" name="url" value="{{ $address->description }}" disabled>
                     </div>
+
+                    <list-detail url="{{ route('address.details', $address->id) }}"></list-detail>
                 </div>
                 <div class="card-footer text-right">
                     <form action="{{ route('address.destroy', $address->id) }}" method="post">
