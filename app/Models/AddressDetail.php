@@ -24,6 +24,6 @@ class AddressDetail extends Model
      */
     protected function serializeDate(DateTimeInterface $date)
     {
-        return $date->format('d/m/Y - H:m:s');
+        return $date->format('d-m-Y - H:i:s');
     }
 }

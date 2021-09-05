@@ -6,7 +6,18 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    Visualizar URL
+                    <div class="row">
+                        <div class="col">
+                            Visualizar URL
+                        </div>
+                        <div class="col text-right">
+                            <form action="{{ route('address.destroy', $address->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-outline-danger">Excluir</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
@@ -15,13 +26,6 @@
                     </div>
 
                     <list-detail url="{{ route('address.details', $address->id) }}"></list-detail>
-                </div>
-                <div class="card-footer text-right">
-                    <form action="{{ route('address.destroy', $address->id) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger">Excluir</button>
-                    </form>
                 </div>
             </div>
         </div>

@@ -128,6 +128,6 @@ class AddressController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function details(Address $address) {
-        return response()->json($address->details);
+        return response()->json($address->details()->orderBy('created_at', 'desc')->get());
     }
 }
